@@ -1,0 +1,80 @@
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">暖</span>
+    <div>
+      <h1>暖仓 <span class="badge-soft" id="versionBadge">v1.1</span></h1>
+      <p>储藏室编码管理 · 箱级档案</p>
+    </div>
+  </div>
+
+  <div class="search">
+    <span class="ico">⌕</span>
+    <input id="searchInput" type="text" placeholder="搜索箱名、内容关键词、位置码…" autocomplete="off" spellcheck="false">
+    <kbd>Ctrl K</kbd>
+    <div id="searchPanel" class="search-panel" hidden></div>
+  </div>
+
+  <nav class="actions">
+    <span id="syncPill" class="sync-pill" hidden></span>
+    <button class="btn" id="btnLabels">标签中心</button>
+    <button class="btn" id="btnTrash">回收站<span class="count" id="trashCount" hidden>0</span></button>
+    <button class="btn" id="btnSettings">设置与备份</button>
+  </nav>
+</header>
+
+<main>
+  <section id="viewRoom" class="view">
+    <div class="view-head">
+      <div>
+        <h2>房间平面图</h2>
+        <p class="sub">点击柜子查看层板。层号从上往下，箱号从左往右。</p>
+      </div>
+      <div class="stats" id="roomStats"></div>
+    </div>
+    <div class="plan-card">
+      <svg id="planSvg" class="plan-svg" viewBox="0 0 900 560" role="img" aria-label="储藏室平面图"></svg>
+      <div class="legend" id="legend"></div>
+    </div>
+  </section>
+
+  <section id="viewCabinet" class="view" hidden>
+    <div class="crumbs">
+      <a data-nav="room">房间平面图</a>
+      <span>/</span>
+      <span id="crumbCabinet">柜体</span>
+    </div>
+    <div class="view-head">
+      <div>
+        <h2 id="cabTitle">柜体</h2>
+        <p class="sub" id="cabSub"></p>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary" id="btnAddHere">+ 新增箱子</button>
+      </div>
+    </div>
+    <div class="cabinet-frame" id="floors"></div>
+  </section>
+
+  <section id="viewTrash" class="view" hidden>
+    <div class="view-head">
+      <div>
+        <h2>回收站</h2>
+        <p class="sub">删除的箱子保留 30 天。到期后打开暖仓时自动清理。</p>
+      </div>
+      <div class="row">
+        <button class="btn" data-nav="room">返回平面图</button>
+      </div>
+    </div>
+    <div class="trash-list" id="trashList"></div>
+  </section>
+</main>
+
+<div id="drawerBackdrop" class="drawer-backdrop" hidden></div>
+<aside id="drawer" class="drawer" aria-hidden="true"></aside>
+
+<div id="modalRoot"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+__APP_JS__
+</script>

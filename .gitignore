@@ -1,0 +1,23 @@
+# 依赖与构建缓存
+源码/node_modules/
+源码/release/
+**/__pycache__/
+*.pyc
+
+# 运行时数据（含个人数据，不入库）
+暖仓发布/暖仓数据.json
+暖仓发布/暖仓数据.json.bak
+暖仓共享版/数据/
+*.bak
+*.broken-*
+*.tmp
+
+# 大体积可执行文件
+暖仓发布/*.exe
+
+# 临时与部署包
+暖仓公网版.zip
+work/
+_rel*.json
+_repo.json
+gh_user.json
